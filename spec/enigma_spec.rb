@@ -13,4 +13,9 @@ RSpec.describe Enigma do
     expect(enigma.character_set.count).to eq (27)
   end
 
+  it "generate a random key" do
+    expect(enigma.generate_key).to be_a String
+    expect(enigma.generate_key.length).to eq 5
+  end
+
 end
