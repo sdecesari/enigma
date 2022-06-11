@@ -8,4 +8,9 @@ RSpec.describe Enigma do
     expect(enigma).to be_a Enigma
   end
 
+  it "can have an array of characters" do
+    expect(enigma.character_set).to be_a Array
+    expect(enigma.character_set.count).to eq (27)
+  end
+
 end
