@@ -18,4 +18,11 @@ class Generator
     }
   end
 
+  def todays_date
+    date = Time.new.strftime("%d/%m/%y").delete("/").to_i
+    sqr = (date ** 2).to_s
+    digit = sqr[-4..-1]
+    digit.split("")
+  end
+
 end
