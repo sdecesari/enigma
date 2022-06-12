@@ -25,4 +25,14 @@ class Generator
     digit.split("")
   end
 
+  def split_offset
+    offset = todays_date
+    {
+      a_offset: offset[0].to_i,
+      b_offset: offset[1].to_i,
+      c_offset: offset[2].to_i,
+      d_offset: offset[3].to_i
+    }
+  end
+
 end
