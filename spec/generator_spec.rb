@@ -18,4 +18,24 @@ RSpec.describe Generator do
     expect(generator.generate_key.length).to eq 5
   end
 
+  it "can create a hash of keys" do
+    expect(generator.split_keys).to be_a Hash
+    expect(generator.split_keys.values.count).to eq 4
+  end
+
+  it "has a date" do
+    expect(generator.todays_date).to be_a Array
+    expect(generator.todays_date.length).to eq 4
+  end
+
+  it "can split offset" do
+    expect(generator.split_offset).to be_a Hash
+    expect(generator.split_offset.length).to eq 4
+  end
+
+  it "can shift" do
+    expect(generator.shift).to be_a Hash
+    expect(generator.shift.length).to eq 4
+  end
+
 end
