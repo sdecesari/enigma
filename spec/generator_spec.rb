@@ -32,5 +32,10 @@ RSpec.describe Generator do
     expect(generator.split_offset).to be_a Hash
     expect(generator.split_offset.length).to eq 4
   end
-  
+
+  it "can shift" do
+    expect(generator.shift).to be_a Hash
+    expect(generator.shift.length).to eq 4
+  end
+
 end
