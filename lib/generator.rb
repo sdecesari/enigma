@@ -35,4 +35,15 @@ class Generator
     }
   end
 
+  def shift
+    key = split_keys
+    offset = split_offset
+    {
+      A: key[:a_key] + offset[:a_offset],
+      B: key[:b_key] + offset[:b_offset],
+      C: key[:c_key] + offset[:c_offset],
+      D: key[:d_key] + offset[:d_offset]
+    }
+  end
+
 end
