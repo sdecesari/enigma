@@ -23,4 +23,9 @@ RSpec.describe Generator do
     expect(generator.split_keys.values.count).to eq 4
   end
 
+  it "can generate a date" do
+    expect(generator.todays_date).to be_a Array
+    expect(generator.todays_date.length).to eq 4
+  end
+
 end
