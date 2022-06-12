@@ -13,4 +13,9 @@ RSpec.describe Generator do
     expect(generator.character_set.count).to eq (27)
   end
 
+  it "can generate a random key" do
+    expect(generator.generate_key).to be_a String
+    expect(generator.generate_key.length).to eq 5
+  end
+
 end
