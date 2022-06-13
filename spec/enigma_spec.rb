@@ -14,4 +14,14 @@ RSpec.describe Enigma do
     expect(enigma.character_set.count).to eq (27)
   end
 
+  it "can encrypt a message with a key and date" do
+    result = {
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+    }
+
+    expect(enigma.encrypt("hello world", "02715", "040895")).to eq result
+  end
+
 end
