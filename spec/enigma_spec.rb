@@ -21,7 +21,19 @@ RSpec.describe Enigma do
       date: "040895"
     }
 
+    expect(enigma.encrypt("hello world", "02715", "040895")).to be_a Hash
     expect(enigma.encrypt("hello world", "02715", "040895")).to eq result
+  end
+
+  it "can decrypt a message with a key and date" do
+    result = {
+      decryption: "hello world",
+      key: "02715",
+      date: "040895"
+    }
+
+    expect(enigma.decrypt("keder ohulw", "02715", "040895")).to be_a Hash
+    expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq result
   end
 
 end
