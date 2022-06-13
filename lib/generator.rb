@@ -35,7 +35,7 @@ class Generator
     }
   end
 
-  def shift
+  def combine
     key = split_keys
     offset = split_offset
     {
@@ -44,6 +44,11 @@ class Generator
       C: key[:c_key] + offset[:c_offset],
       D: key[:d_key] + offset[:d_offset]
     }
+  end
+
+  def rotate(shift)
+    rotate = @character_set.rotate(shift)
+    @character_set.zip(rotate).to_h
   end
 
 end

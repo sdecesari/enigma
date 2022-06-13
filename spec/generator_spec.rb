@@ -33,9 +33,16 @@ RSpec.describe Generator do
     expect(generator.split_offset.length).to eq 4
   end
 
-  it "can shift" do
-    expect(generator.shift).to be_a Hash
-    expect(generator.shift.length).to eq 4
+  it "can combine key and offset" do
+    expect(generator.combine).to be_a Hash
+    expect(generator.combine.length).to eq 4
   end
 
+  it "can rotate" do
+    expect(generator.rotate(1)).to be_a Hash
+    expect(generator.rotate(3)["a"]).to eq "d"
+    expect(generator.rotate(2)["f"]).to eq "h"
+    expect(generator.rotate(26)["u"]).to eq "t"
+  end
+  
 end
