@@ -5,9 +5,7 @@ class Enigma
       @generator = Generator.new
     end
 
-  def encrypt(message, key = nil, date = nil)
-  random_key = @generator.generate_key
-  todays_date = Time.new.strftime("%d/%m/%y").delete("/")
+  def encrypt(message, key = @generator.generate_key, date = Time.new.strftime("%d/%m/%y").delete("/"))
   message_array = message.downcase.split("")
   a_shift = @generator.rotate(@generator.combine(key, date)[:A])
   b_shift = @generator.rotate(@generator.combine(key, date)[:B])
@@ -70,5 +68,5 @@ class Enigma
         date: date
       }
   end
-    
+
 end
