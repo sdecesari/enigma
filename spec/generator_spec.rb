@@ -19,23 +19,26 @@ RSpec.describe Generator do
   end
 
   it "can create a hash of keys" do
-    expect(generator.split_keys).to be_a Hash
-    expect(generator.split_keys.values.count).to eq 4
+    expect(generator.split_keys('02715')).to be_a Hash
+    expect(generator.split_keys('02715')).to eq ({:a_key=>2, :b_key=>27, :c_key=>71, :d_key=>15})
+    expect(generator.split_keys('02715').values.count).to eq 4
   end
 
   it "can generate a date" do
-    expect(generator.todays_date).to be_a Array
-    expect(generator.todays_date.length).to eq 4
+    date = Time.new.strftime("%d/%m/%y").delete("/").to_i
+    expect(generator.todays_date).to be_a Integer
+    expect(generator.todays_date).to eq date
   end
 
   it "can create a hash of split offset" do
-    expect(generator.split_offset).to be_a Hash
-    expect(generator.split_offset.length).to eq 4
+    expect(generator.split_offset('040895')).to be_a Hash
+    expect(generator.split_offset('040895')).to eq ({:a_offset=>1, :b_offset=>0, :c_offset=>2, :d_offset=>5})
+    expect(generator.split_offset('040895').length).to eq 4
   end
 
   it "can combine key and offset" do
-    expect(generator.combine).to be_a Hash
-    expect(generator.combine.length).to eq 4
+    expect(generator.combine('02715','040895')).to be_a Hash
+    expect(generator.combine('02715','040895').length).to eq 4
   end
 
   it "can rotate" do
@@ -44,5 +47,5 @@ RSpec.describe Generator do
     expect(generator.rotate(2)["f"]).to eq "h"
     expect(generator.rotate(26)["u"]).to eq "t"
   end
-  
+
 end
