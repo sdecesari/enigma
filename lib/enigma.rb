@@ -36,14 +36,12 @@ class Enigma
   }
   end
 
-  def decrypt(cyphertext, key, date = nil)
-      random_key = @generator.generate_key
-      todays_date = Time.new.strftime("%d/%m/%y").delete("/")
+  def decrypt(cyphertext, key, date = todays_date = Time.new.strftime("%d/%m/%y").delete("/"))
       message_array = cyphertext.downcase.split("")
       a_shift = @generator.rotate(@generator.combine(key, date)[:A] * -1)
       b_shift = @generator.rotate(@generator.combine(key, date)[:B] * -1)
       c_shift = @generator.rotate(@generator.combine(key, date)[:C] * -1)
-      d_shift = @generator.rotate(@generator.combine(key, date)[:D]* -1)
+      d_shift = @generator.rotate(@generator.combine(key, date)[:D] * -1)
       counter = 0
       decrypted_message = []
         message_array.each do |letter|
