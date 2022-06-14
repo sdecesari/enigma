@@ -1,12 +1,13 @@
 # enigma
 
-## Learning Goals / Areas of Focus
-* Practice breaking a program into logical components
-* Build classes that demonstrate single responsibilities
-* Test drive a well-designed Object Oriented solution
-* Work with file i/o
+## Functionality = 3
+Encrypt and Decrypt are successfully implemented. CLI is successfully implemented and handles uppercase characters as well as characters not included in the character set.
 
-## Overview
-In this project you’ll use Ruby to build a tool for cracking an encryption algorithm. Make sure you understand the Encryption Algorithm and plan out what classes you may need prior to starting.
+## OOP = 3
+Project is broken up by two classes and two runner files. Each class has a single responsibility. No class is more than 100 lines long.
 
-Additionally, you will self assess your project before your evaluation. Make sure you read through the Evaluation Rubric prior to beginning so that you know what is expected of this project.
+## Ruby Conventions and Mechanics = 3.5
+Everything is well named and code is all properly indented and syntax is consistent. Two methods are longer than 10 lines. I attempted to break these apart but I broke things so decided it was better kept as a single method. Multiple hashes were created and successfully called on.
+
+## TDD = 3
+Every method is tested at the unit and integration level. All obvious(obvious to me at least) edge cases are addressed. Set up all tests before methods were created. SimpleCov is at 100%.
