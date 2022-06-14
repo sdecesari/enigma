@@ -11,3 +11,6 @@ Everything is well named and code is all properly indented and syntax is consist
 
 ## TDD = 3
 Every method is tested at the unit and integration level. All obvious(obvious to me at least) edge cases are addressed. Set up all tests before methods were created. SimpleCov is at 100%.
+
+## Version Control = 4
+I have 56 commits and 10 pull requests. All requests include related and logical chunks of functionality and communicate the purpose of the pull request.
